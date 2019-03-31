@@ -1,0 +1,41 @@
+{% extends "users/base.html" %}
+{% block title %}Login{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<br>
+<br><br>
+<br>
+<br>
+<br>
+
+
+
+
+	<div class="container p-2 ">
+		<form method="POST">
+			{% csrf_token %}
+				 <!-- to provide security -->
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4"><h3 class="panel-heading text-center">Log in here</h3></legend>
+				{{ form|crispy }} <!-- 
+					using crsipy form tag
+				excessing the form variable   
+				 form.as_p will render the form in paragraph format -->
+			</fieldset>
+			<div class="form-group">
+			<button class="btn btn-outline-warning" type="submit">Log In</button>
+			</div>
+		</form>
+		<div class="border-top pt-3">
+			<small class="text-muted">
+				Need an Account? <a href="{% url 'register' %}" class="ml-2">Sign Up Now</a>
+			</small>
+		</div>
+	</div>
+
+
+
+
+{% endblock content %}

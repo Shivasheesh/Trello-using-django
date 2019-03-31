@@ -1,0 +1,28 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+<br>
+<br><br>
+<br>
+	<div class="container mt-5">
+		<form method="POST">
+			{% csrf_token %}  <!-- to provide security -->
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Sign up now!</legend>
+				{{ form|crispy }} <!-- excessing the form variable   
+				 form.as_p will render the form in paragraph format -->
+			</fieldset>
+			<div class="form-group">
+			<button class="btn btn-outline-warning" type="submit">Sign Up</button>
+			</div>
+		</form>
+		<div class="border-top pt-3">
+			<small class="text-muted">
+				Already Have an account? <a href="{% url 'login' %}" class="ml-2">Sign In</a>
+			</small>
+		</div>
+	</div>
+{% endblock content %}

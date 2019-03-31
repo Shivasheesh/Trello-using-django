@@ -1,0 +1,50 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<br><br>
+  <h2><a href="" class="">Create new board</a></h2>
+  <br>
+  <div class="card-deck mb-3 text-center">
+  	{% for board in boards %}
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ board.title }}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"></small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        	<li class="text-dark">MEMBERS</li>
+          
+
+          <li>{{ board.members }}</li>
+        
+          
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a href="{% url 'edit' %}" class="">Edit</a></button>
+      </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

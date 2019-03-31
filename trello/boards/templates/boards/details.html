@@ -1,0 +1,44 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+<!--
+<h2>Current Members</h2>
+{% for board in boards %}
+    <ul class="list-unstyled mt-3 mb-4">
+        	<li class="text-dark">MEMBERS</li>
+          
+
+          <li>{{ board.members }}</li>
+        
+          
+        </ul>
+ {% endfor %} -->
+<h2>Select Members</h2>
+
+
+<table class="table">
+	<thead>
+		<th>Member Name</th>
+		<th>Add</th>
+		<th>Delete</th>
+	</thead>
+	<tr>
+		{% for member in members %}
+		<td>{{ member.title }}</td>
+		<td><button type="button" class="btn btn-success">Add</button></td>
+		<td><button type="button" class="btn btn-danger">Remove</button></td>
+		
+	</tr>
+	{% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
